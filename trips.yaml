@@ -1,0 +1,39 @@
+apiVersion: apps/v1 
+
+kind: Deployment 
+
+metadata: 
+
+  name: trips 
+
+spec: 
+
+  selector: 
+
+    matchLabels: 
+
+      run: trips-label 
+
+  replicas: 2 
+
+  template: 
+
+    metadata: 
+
+      labels: 
+
+        run: trips-label 
+
+    spec: 
+
+      containers: 
+
+        - name: trips 
+
+          image: registryzuh9724.azurecr.io/poi/trips:0.0.1 
+
+          ports: 
+
+            - containerPort: 8080 
+
+              protocol: TCP 

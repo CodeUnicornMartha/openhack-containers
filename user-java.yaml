@@ -1,0 +1,39 @@
+apiVersion: apps/v1 
+
+kind: Deployment 
+
+metadata: 
+
+  name: user-java 
+
+spec: 
+
+  selector: 
+
+    matchLabels: 
+
+      run: userjava-label 
+
+  replicas: 2 
+
+  template: 
+
+    metadata: 
+
+      labels: 
+
+        run: userjava-label 
+
+    spec: 
+
+      containers: 
+
+        - name: user-java 
+
+          image: registryzuh9724.azurecr.io/poi/user-java:0.0.1 
+
+          ports: 
+
+            - containerPort: 8080 
+
+              protocol: TCP 
