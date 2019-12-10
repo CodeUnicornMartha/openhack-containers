@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: poi 
+spec: 
+  selector: 
+    matchLabels: 
+      run: poi-label 
+  replicas: 2 
+  template: 
+    metadata: 
+      labels: 
+        run: poi-label 
+    spec: 
+      containers: 
+        - name: poi 
+          image: registryzuh9724.azurecr.io/martha4splitthoff/poi:0.0.1 
+          ports: 
+            - containerPort: 8080 
+              protocol: TCP 
