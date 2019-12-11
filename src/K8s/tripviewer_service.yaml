@@ -1,14 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: poi-service
+  name: tripviewer-service
+  namespace: web-dev
   labels:
-    run: poi-label
+    run: tripviewer-label
 spec:
   selector:
-    run: poi-label
+    run: tripviewer-label
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer
+  type: ClusterIP

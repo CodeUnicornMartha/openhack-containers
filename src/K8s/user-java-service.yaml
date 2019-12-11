@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: userjava-service
+  namespace: api-dev
   labels:
     run: userjava-label
 spec:
@@ -11,4 +12,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer
+  type: ClusterIP
