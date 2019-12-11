@@ -18,3 +18,48 @@ spec:
           ports: 
             - containerPort: 8080 
               protocol: TCP 
+          env:
+            - name: Azure_PROFILE
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: Azure_PROFILE
+            - name: Azure_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: Azure_REGION
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: JWT_SECRET
+            - name: POSTGRESS_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: POSTGRESS_DB
+            - name: POSTGRESS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: POSTGRESS_HOST
+            - name: POSTGRESS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: env-secret
+                  key: POSTGRESS_PASSWORD
+            - name: POSTGRESS_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: env-secret
+                  key: POSTGRESS_USERNAME      
+            volumeMounts:
+            - name: azure-secret
+              mountPath: "/root/.azure/"
+              readOnly: true        
+          restartPolicy: Always
+          volumes:
+          - name: azure-secret
+            secret:
+              secretName: azure-secret    
