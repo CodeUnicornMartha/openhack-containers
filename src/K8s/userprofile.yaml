@@ -1,0 +1,29 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: user-profile
+spec: 
+  selector: 
+    matchLabels: 
+      run: userprofile-label 
+  replicas: 2 
+  template: 
+    metadata: 
+      labels: 
+        run: userprofile-label 
+    spec: 
+      containers: 
+        - name: user-profile 
+          image: registryzuh9724.azurecr.io/userprofile:0.0.1 
+          ports: 
+            - containerPort: 8080 
+              protocol: TCP 
+          env:
+            - name: SQL_USER
+              value: sqladminzUh9724
+            - name: SQL_PASSWORD
+              value: rX0gc3Lz8
+            - name: SQL_SERVER
+              value: sqlserverzuh9724.database.windows.net
+            - name: SQL_DBNAME
+              value: mydrivingDB
