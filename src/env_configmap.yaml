@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  Azure_PROFILE: ___INSERT_Azure_PROFILE___
+  Azure_REGION: ___INSERT_Azure_REGION___
+  JWT_SECRET: ___INSERT_JWT_SECRET___
+  POSTGRESS_DB: ___INSERT_POSTGRESS_DB___
+  POSTGRESS_HOST: ___INSERT_POSTGRESS_HOST___
+  URL: http://localhost:8100  
+metadata:
+  name: env-config
+  
