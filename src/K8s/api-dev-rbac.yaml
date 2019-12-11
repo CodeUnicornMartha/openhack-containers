@@ -1,0 +1,14 @@
+kind: RoleBinding 
+apiVersion: rbac.authorization.k8s.io/v1beta1 
+metadata: 
+  name: api-dev-rolebinding 
+  namespace: api-dev 
+roleRef: 
+  apiGroup: rbac.authorization.k8s.io 
+  kind: Role 
+  name: edit, view 
+subjects: 
+  - apiGroup: rbac.authorization.k8s.io 
+    kind: User 
+    namespace: api-dev 
+    name: "apidev@OTAPRD142ops.onmicrosoft.com"
