@@ -18,3 +18,8 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
+          env:
+            - name: USERPROFILE_API_ENDPOINT
+              value: 
+            - name: TRIPS_API_ENDPOINT
+              value: 
