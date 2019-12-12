@@ -20,12 +20,12 @@ spec:
             - containerPort: 8080 
               protocol: TCP 
           env:
-            - name: SQL_USER
+            - name: SQLUSER
               value: sqladminzUh9724
-            - name: SQL_PASSWORD
+            - name: SQLPASSWORD
               value: rX0gc3Lz8
-            - name: SQL_SERVER
+            - name: SQLSERVER
               value: sqlserverzuh9724.database.windows.net
-            - name: SQL_DBNAME
+            - name: SQLDBNAME
               value: mydrivingDB
 
